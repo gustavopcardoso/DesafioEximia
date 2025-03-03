@@ -1,11 +1,6 @@
 ﻿using Eximia.CreditoConsignado.Domain.Enums;
 using Eximia.CreditoConsignado.Domain.Exceptions;
 using Eximia.CreditoConsignado.Domain.ValueObjects.Proposta;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Eximia.CreditoConsignado.Domain.Entities
 {
@@ -27,10 +22,10 @@ namespace Eximia.CreditoConsignado.Domain.Entities
             Id = Guid.NewGuid();
 
             if (DataNascimento > DateTime.Now)
-                throw new DomainException("Data de nascimento não pode ser no futuro.");
+                throw new DomainException("Data de nascimento não pode ser futura.");
         }
 
-        public void IsPropostaAllowed(Proposta propostaExistente)
+        public void ValidarPropostaAtiva(Proposta propostaExistente)
         {
             if (propostaExistente == null)
                 return;
@@ -39,16 +34,16 @@ namespace Eximia.CreditoConsignado.Domain.Entities
                 throw new DomainException("Proponente já possui proposta ativa.");
         }
 
-        public void IsCpfAllowed(string cpf, List<string> fraudulentCpfList)
+        public void ValidarCpfAutorizado(string cpf, List<string> fraudulentCpfList)
         {
             if (fraudulentCpfList != null && fraudulentCpfList.Contains(cpf))
-                throw new DomainException("CPF não autorizado.");
+                throw new DomainException("CPF não autorizado. Verificar lista de CPFs fraudulentos.");
         }
 
-        public void IsAgenteAllowed(bool isAllowed)
+        public void ValidarAgenteHomologado(bool isAllowed)
         {
             if (!isAllowed)
-                throw new DomainException("Agente não autorizado.");
+                throw new DomainException("Agente não autorizado para realizar operação.");
         }        
     }
 }

@@ -3,11 +3,6 @@ using Eximia.CreditoConsignado.Domain.Entities;
 using Eximia.CreditoConsignado.Domain.Repositories;
 using Eximia.CreditoConsignado.ORM.EntityTypes;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Eximia.CreditoConsignado.ORM.Repositories
 {
@@ -21,10 +16,16 @@ namespace Eximia.CreditoConsignado.ORM.Repositories
             return _mapper.Map<Proposta>(propostaEntity);
         }
 
-        public async Task<Proposta?> GetByCpfAsync(string cpf, CancellationToken cancellationToken)
+        public async Task<Proposta> GetByCpfAsync(string cpf, CancellationToken cancellationToken)
         {            
             var propostaEntity = await _appDbContext.Proposta.FirstOrDefaultAsync(p => p.Cpf == cpf, cancellationToken);
             return _mapper.Map<Proposta>(propostaEntity);
-        }        
+        }
+
+        public async Task<Proposta> GetByIdAsync(Guid id, CancellationToken cancellationToken)
+        {
+            var propostaEntity = await _appDbContext.Proposta.FindAsync(id, cancellationToken);
+            return _mapper.Map<Proposta>(propostaEntity);
+        }
     }
 }

@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Eximia.CreditoConsignado.Controllers.Proposta
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class PropostaController(IMediator _mediator, IMapper _mapper) : Controller
     {
         [HttpPost]
@@ -14,10 +16,8 @@ namespace Eximia.CreditoConsignado.Controllers.Proposta
             var validator = new CreatePropostaRequestValidator();
             var validationResult = validator.Validate(request);
 
-            if (!validationResult.IsValid)
-            {
-                return BadRequest(validationResult.Errors);
-            }
+            if (!validationResult.IsValid)            
+                return BadRequest(validationResult.Errors);            
 
             var command = _mapper.Map<CreatePropostaCommand>(request);
             var response = await _mediator.Send(command, cancellationToken);
@@ -26,7 +26,7 @@ namespace Eximia.CreditoConsignado.Controllers.Proposta
                 String.Empty,
                 new
                 {
-                    Message = "Proposta criada com sucesso!",
+                    Message = "Proposta criada com sucesso",
                     ID = response.Id
                 });
         }
