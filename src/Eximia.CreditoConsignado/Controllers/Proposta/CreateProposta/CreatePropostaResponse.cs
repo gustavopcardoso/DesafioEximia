@@ -2,5 +2,6 @@
 {
     public class CreatePropostaResponse
     {
+        public Guid Id { get; set; }
     }
 }

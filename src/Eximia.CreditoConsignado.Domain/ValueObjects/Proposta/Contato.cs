@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eximia.CreditoConsignado.Application.CreateProposta
+namespace Eximia.CreditoConsignado.Domain.ValueObjects.Proposta
 {
-    class CreatePropostaValidator
+    public class Contato
     {
     }
 }
