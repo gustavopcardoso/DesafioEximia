@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Eximia.CreditoConsignado.Controllers
+namespace Eximia.CreditoConsignado.Controllers.Proposta
 {
     public class PropostaController : Controller
     {
