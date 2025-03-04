@@ -23,7 +23,7 @@ namespace Eximia.CreditoConsignado.Domain.Entities
 
         public void ValidarValorParcelaMaximo(decimal rendimentoProponente)
         {
-            var valorParcela = Valor / Parcelas;
+            decimal valorParcela = Valor / Parcelas;
             var percentualRendimento = valorParcela / rendimentoProponente;
 
             if (percentualRendimento > 0.3m)            
@@ -33,7 +33,7 @@ namespace Eximia.CreditoConsignado.Domain.Entities
         public decimal CalcularValorFinal(decimal valorProposto)
         {
             int totalAnos = Parcelas / 12;
-            int taxaAnual = 12;
+            double taxaAnual = 12;
 
             // Precisaria calcular um juro proporcional aos meses do ultimo ano caso não sejam 12.
             decimal valorFinal = valorProposto * (decimal)Math.Pow((1 + (taxaAnual/100)), totalAnos);
@@ -46,7 +46,7 @@ namespace Eximia.CreditoConsignado.Domain.Entities
             var dataUltimaParcela = DateTime.Now.AddMonths(Parcelas);
             var idadeProponente = DateTime.Now.Year - dataNascimentoProponente.Year;
 
-            if (dataUltimaParcela.Year > DateTime.Now.Year + 80 - idadeProponente)
+            if (dataUltimaParcela.Year > DateTime.Now.Year + (80 - idadeProponente))
                 throw new DomainException("A última parcela ultrapassa o limite de idade do proponente (80 anos).");
         }
     }

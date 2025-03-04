@@ -6,8 +6,10 @@ namespace Eximia.CreditoConsignado.Controllers.Proposta.CreateProposta
     {
         public CreatePropostaRequestValidator() 
         {
+            RuleFor(x => x.AgenteId).NotEmpty().WithMessage("AgenteId é obrigatório");
             RuleFor(x => x.CPF).NotEmpty().WithMessage("CPF é obrigatório");
             RuleFor(x => x.Nome).NotEmpty().WithMessage("Nome é obrigatório");
+            RuleFor(x => x.DataNascimento).NotEmpty().WithMessage("Data de nascimento é obrigatória");
             RuleFor(x => x.DadosRendimento).SetValidator(new DadosRendimentoValidator());
             RuleFor(x => x.Endereco).SetValidator(new EnderecoValidator());
             RuleFor(x => x.Contato).SetValidator(new ContatoValidator());

@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Eximia.CreditoConsignado.Application\Eximia.CreditoConsignado.Application.csproj" />
+  </ItemGroup>
+
 </Project>

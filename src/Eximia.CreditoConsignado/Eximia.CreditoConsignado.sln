@@ -15,11 +15,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{3D86384E-6325-4939-84D0-D5EA51252978}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
-	ProjectSection(SolutionItems) = preProject
-		docker-compose.yml = docker-compose.yml
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eximia.CreditoConsignado.Application", "..\Eximia.CreditoConsignado.Application\Eximia.CreditoConsignado.Application.csproj", "{C91B1E03-ADAA-41CC-B6AF-A6E02D94C7B6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eximia.CreditoConsignado.ORM", "..\Eximia.CreditoConsignado.ORM\Eximia.CreditoConsignado.ORM.csproj", "{EF535724-DA44-479A-BB6C-71B296E7F3B2}"

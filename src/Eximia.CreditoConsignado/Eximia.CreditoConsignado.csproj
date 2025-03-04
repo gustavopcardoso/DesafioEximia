@@ -10,11 +10,19 @@
     <PackageReference Include="AutoMapper" Version="14.0.0" />
     <PackageReference Include="FluentValidation" Version="11.11.0" />
     <PackageReference Include="MediatR" Version="12.4.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="StackExchange.Redis" Version="2.8.24" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Eximia.CreditoConsignado.Application\Eximia.CreditoConsignado.Application.csproj" />
+    <ProjectReference Include="..\Eximia.CreditoConsignado.Cache\Eximia.CreditoConsignado.Cache.csproj" />
+    <ProjectReference Include="..\Eximia.CreditoConsignado.ExternalServices\Eximia.CreditoConsignado.ExternalServices.csproj" />
+    <ProjectReference Include="..\Eximia.CreditoConsignado.ORM\Eximia.CreditoConsignado.ORM.csproj" />
   </ItemGroup>
 
 </Project>

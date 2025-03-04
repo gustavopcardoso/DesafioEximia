@@ -2,8 +2,11 @@
 {
     public class CreatePropostaRequest
     {
+        public Guid AgenteId { get; set; }
         public string CPF { get; set; } = string.Empty;
         public string Nome { get; set; } = string.Empty;
+
+        public DateTime DataNascimento { get; set; }
         public DadosRendimentoRequest DadosRendimento { get; set; } = new DadosRendimentoRequest();
         public EnderecoRequest Endereco { get; set; } = new EnderecoRequest();
         public ContatoRequest Contato { get; set; } = new ContatoRequest();
@@ -19,7 +22,7 @@
     {
         public string CEP { get; set; } = string.Empty;
         public string Logradouro { get; set; } = string.Empty;
-        public string Numero { get; set; } = string.Empty;
+        public int Numero { get; set; }
         public string Complemento { get; set; } = string.Empty;
         public string Bairro { get; set; } = string.Empty;        
         public string Cidade { get; set; } = string.Empty;
