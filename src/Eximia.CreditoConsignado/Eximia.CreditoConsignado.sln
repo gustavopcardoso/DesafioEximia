@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35806.99 d17.13
+VisualStudioVersion = 17.13.35806.99
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eximia.CreditoConsignado", "Eximia.CreditoConsignado.csproj", "{0FFF5733-9615-42D2-9606-0CE370A01CED}"
 EndProject
@@ -24,6 +24,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eximia.CreditoConsignado.Domain", "..\Eximia.CreditoConsignado.Domain\Eximia.CreditoConsignado.Domain.csproj", "{8560B4C3-96A5-4708-9F03-841A9CE5849F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eximia.CreditoConsignado.ExternalServices", "..\Eximia.CreditoConsignado.ExternalServices\Eximia.CreditoConsignado.ExternalServices.csproj", "{854632B6-C1B1-4AC1-BAB1-23BB63B423D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eximia.CreditoConsignado.Messaging", "..\Eximia.CreditoConsignado.Messaging\Eximia.CreditoConsignado.Messaging.csproj", "{C3CD76B4-C248-4FB8-94D6-EAD40AED7362}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{854632B6-C1B1-4AC1-BAB1-23BB63B423D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{854632B6-C1B1-4AC1-BAB1-23BB63B423D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{854632B6-C1B1-4AC1-BAB1-23BB63B423D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3CD76B4-C248-4FB8-94D6-EAD40AED7362}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3CD76B4-C248-4FB8-94D6-EAD40AED7362}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3CD76B4-C248-4FB8-94D6-EAD40AED7362}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3CD76B4-C248-4FB8-94D6-EAD40AED7362}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +74,7 @@ Global
 		{81FA1366-B2D9-4B72-83F0-8B40AAC22FB3} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{8560B4C3-96A5-4708-9F03-841A9CE5849F} = {1E54FB36-7034-4EDE-9410-7153CDF80CB5}
 		{854632B6-C1B1-4AC1-BAB1-23BB63B423D3} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{C3CD76B4-C248-4FB8-94D6-EAD40AED7362} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2BBCB502-172E-4220-B238-390A4B882BE2}

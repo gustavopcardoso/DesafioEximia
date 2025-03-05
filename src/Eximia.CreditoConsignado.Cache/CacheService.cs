@@ -1,4 +1,4 @@
-﻿using Eximia.CreditoConsignado.Application.ServiceInterfaces;
+﻿using Eximia.CreditoConsignado.Domain.Services;
 using StackExchange.Redis;
 using System.Text.Json;
 

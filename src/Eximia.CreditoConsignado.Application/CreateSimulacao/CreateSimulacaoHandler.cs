@@ -11,17 +11,17 @@ namespace Eximia.CreditoConsignado.Application.CreateSimulacao
         : IRequestHandler<CreateSimulacaoCommand, CreateSimulacaoResult>
     {
         public async Task<CreateSimulacaoResult> Handle(CreateSimulacaoCommand request, CancellationToken cancellationToken)
-        {
+        {            
+            var proposta = await _propostaRepository.GetByIdAsync(request.PropostaId, cancellationToken);
+
+            if (proposta == null)
+                throw new InvalidOperationException("Proposta não encontrada");
+
             var simulacao = _mapper.Map<Simulacao>(request);
 
-            if (await _propostaRepository.GetByIdAsync(simulacao.PropostaId, cancellationToken) == null)
-                throw new Exception("Proposta não encontrada");
-            
-            simulacao.ValidarParcelamentoMaximo();
-
-            // Optei por dados desnormalizados.
-            simulacao.ValidarValorParcelaMaximo(request.RendimentoProponente);
-            simulacao.ValidarDataUltimaParcela(request.DataNascimentoProponente);
+            simulacao.ValidarParcelamentoMaximo();            
+            simulacao.ValidarValorParcelaMaximo(proposta.DadosRendimento.ValorAposentadoria);
+            simulacao.ValidarDataUltimaParcela(proposta.DataNascimento);
 
             simulacao.ValorFinal = simulacao.CalcularValorFinal(request.Valor);
             var result = _mapper.Map<CreateSimulacaoResult>(simulacao);

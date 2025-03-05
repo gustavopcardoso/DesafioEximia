@@ -28,12 +28,25 @@ services:
     volumes:
       - pgadmin_data:/pgadmin4/servers.json
 
-  Redis:
-    container_name: eximia_redis
+  redis:
     image: redis:7.4.1-alpine     
+    container_name: eximia_redis    
     command: redis-server --requirepass admin
     ports:
        - "6379:6379"
+ 
+  rabbitmq:
+    image: rabbitmq:latest
+    container_name: eximia_rabbitmq
+    restart: always
+    environment:
+        - RABBITMQ_DEFAULT_USER = eximia
+        - RABBITMQ_DEFAULT_PASS = pass123
+    ports:
+        - "5672:5672"
+        - "15672:15672"
+    volumes:
+        - rabbit_data:/var/lib/rabbitmq/
       
 volumes:
   postgres_data:

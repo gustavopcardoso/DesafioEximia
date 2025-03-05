@@ -1,4 +1,4 @@
-﻿namespace Eximia.CreditoConsignado.Application.Services
+﻿namespace Eximia.CreditoConsignado.Domain.Services
 {
     public interface IExternalService
     {

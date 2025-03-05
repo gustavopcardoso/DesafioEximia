@@ -1,8 +1,7 @@
 ﻿using AutoMapper;
-using Eximia.CreditoConsignado.Application.ServiceInterfaces;
-using Eximia.CreditoConsignado.Application.Services;
 using Eximia.CreditoConsignado.Domain.Entities;
 using Eximia.CreditoConsignado.Domain.Repositories;
+using Eximia.CreditoConsignado.Domain.Services;
 using MediatR;
 
 namespace Eximia.CreditoConsignado.Application.CreateProposta
@@ -22,6 +21,7 @@ namespace Eximia.CreditoConsignado.Application.CreateProposta
             proposta.ValidarPropostaAtiva(await _propostaRepository.GetByCpfAsync(request.Cpf, cancellationToken));
             proposta.ValidarCpfAutorizado(request.Cpf, await GetCpfFraude(cancellationToken));
             proposta.ValidarAgenteHomologado(await _externalService.GetAgenteAsync(request.AgenteId, cancellationToken));
+            proposta.SetPropostaCriado();
 
             var propostaCriada = await _propostaRepository.CreateAsync(proposta);
             var result = _mapper.Map<CreatePropostaResult>(propostaCriada);

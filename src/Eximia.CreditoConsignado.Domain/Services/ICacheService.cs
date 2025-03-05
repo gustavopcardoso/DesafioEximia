@@ -1,4 +1,4 @@
-﻿namespace Eximia.CreditoConsignado.Application.ServiceInterfaces
+﻿namespace Eximia.CreditoConsignado.Domain.Services
 {
     public interface ICacheService
     {

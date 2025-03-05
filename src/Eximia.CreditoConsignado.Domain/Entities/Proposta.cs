@@ -15,7 +15,7 @@ namespace Eximia.CreditoConsignado.Domain.Entities
         public Endereco Endereco { get; set; } = new Endereco();
         public Contato Contato { get; set; } = new Contato();
 
-        public StatusPropostaEnum Status { get; set; } = StatusPropostaEnum.EmAnalise;
+        public StatusPropostaEnum Status { get; set; }
 
         public Proposta()
         {
@@ -44,6 +44,27 @@ namespace Eximia.CreditoConsignado.Domain.Entities
         {
             if (!isAllowed)
                 throw new DomainException("Agente não autorizado para realizar operação.");
-        }        
+        }
+
+        public void ValidarScores(decimal validationScore, decimal riskScore)
+        {            
+            if (validationScore < 7 || riskScore < 7) 
+                ReprovarProposta();
+        }
+
+        public void SetPropostaCriado()
+        {
+            Status = StatusPropostaEnum.Criado;
+        }
+
+        public void SetPropostaEmAnalise()
+        {
+            Status = StatusPropostaEnum.EmAnalise;
+        }
+
+        public void ReprovarProposta()
+        {
+            Status = StatusPropostaEnum.Reprovado;
+        }
     }
 }

@@ -27,5 +27,10 @@ namespace Eximia.CreditoConsignado.ORM.Repositories
             var propostaEntity = await _appDbContext.Proposta.FindAsync(id, cancellationToken);
             return _mapper.Map<Proposta>(propostaEntity);
         }
+
+        public Task<Proposta> UpdateAsync(Proposta proposta)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

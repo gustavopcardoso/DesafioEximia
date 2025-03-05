@@ -1,0 +1,9 @@
+﻿namespace Eximia.CreditoConsignado.Controllers.Processamento.CreateProcessamento
+{
+    public class CreateProcessamentoResponse
+    {
+        public Guid PropostaId { get; set; }
+        public bool Sucesso { get; set; }
+        public string Mensagem { get; set; } = string.Empty;
+    }
+}

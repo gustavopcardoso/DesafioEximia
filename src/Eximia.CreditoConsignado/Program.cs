@@ -1,7 +1,6 @@
-using Eximia.CreditoConsignado.Application.ServiceInterfaces;
-using Eximia.CreditoConsignado.Application.Services;
 using Eximia.CreditoConsignado.Cache;
 using Eximia.CreditoConsignado.Domain.Repositories;
+using Eximia.CreditoConsignado.Domain.Services;
 using Eximia.CreditoConsignado.ExternalServices;
 using Eximia.CreditoConsignado.ORM;
 using Eximia.CreditoConsignado.ORM.Repositories;

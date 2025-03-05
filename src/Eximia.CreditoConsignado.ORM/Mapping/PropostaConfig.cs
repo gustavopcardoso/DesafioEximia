@@ -10,6 +10,7 @@ namespace Eximia.CreditoConsignado.ORM.Mapping
         {
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Cpf).IsRequired();
+            builder.Property(x => x.Status).IsRequired();
         }
     }
 }
